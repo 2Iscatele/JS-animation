@@ -1,22 +1,26 @@
-const burger = document.querySelector('.burger');
-const heroBlock = document.querySelector('.hero');
-const minMenu = document.querySelector('.header__nav');
-const uslugMenu = document.querySelector('.nav__link--arrow');
+
 const menu = document.querySelector('.menu');
-const closeMenu = document.querySelector('.close');
-const headerMenu = document.querySelector('.menu__left');
-const CaseMenu = document.querySelector('.menu__right');
-const partnersMenu = document.querySelector('.sub-menu');
+const logo = document.querySelector('.logo');
+const site = document.querySelector('.site');
+const header = document.querySelector('.header__nav');
+const openMenu = document.querySelector('.menu--open');
+var play = document.querySelector(".burger");
+var reverse = document.querySelector(".close");
+
+var tl = gsap.timeline();
 
 
-burger.addEventListener('click', () => {
+tl.fromTo(".hero__left", {duration: 1,  opacity:0.4},{duration: 1,  opacity: 1, stagger: 0.2})
+  .fromTo(".photos-wrap img", {duration: 1,  opacity:0},{duration: 1,  opacity: 1, stagger: 0.2})
+//tl.to(".menu", { duration: 1,  opacity:1,  stagger:0.8,  scale:1})
 
-  menu.classList.add('menu--open');
 
-});
+play.onclick = function(e) {
+  e.preventdefault();
+  tl.play();
+}
 
-closeMenu.addEventListener('click', () => {
+reverse.onclick = function() {
+  tl.reverse();
+}
 
-  menu.classList.remove('menu--open');
-
-})
