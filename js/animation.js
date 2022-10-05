@@ -22,9 +22,10 @@ const onLoad = gsap.timeline()
   .fromTo(".hero__left", { opacity: 0.3, y: 100 }, { opacity: 1, y: 0, duration: 1, delay: 0.5 })
   .fromTo('.hero__desc', { opacity: 0.3 }, { opacity: 1, duration: 0.7},'-=0.5')
   .fromTo('.hero__btn', { opacity: 0.3, x: -1000 }, { opacity: 1, x: 0, duration: 0.6},'-=0.5')
-  .fromTo('.pictures img', { opacity: 0 }, { opacity: 1, duration: 0.7, stagger: 0.25 }, '-=0.2')
-  .fromTo('.photos__autor', { opacity: 0 }, { opacity: 1, duration: 0.7, stagger: 0.25 }, '-=0.1')
   .fromTo('.photos__shape', { opacity: 0 }, { opacity: 1, duration: 0.7, stagger: 0.35 }, '-=0.15')
+  .fromTo('.pictures  img', { opacity: 0 }, { opacity: 1, duration: 1.1,stagger: 0.5 })
+  .fromTo('.photos__head  img', { opacity: 0 }, { opacity: 1, duration: 1.1,stagger: 0.1 })
+  .fromTo('.photos__autor', { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.15 })
 
 
 play.addEventListener('click',() =>  {
